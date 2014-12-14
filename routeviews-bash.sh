@@ -1,6 +1,8 @@
 #!/bin/bash
 # RouteViews-bash
-# Record changes in routing data using the data from routeviews.org
+# Record changes in routing data using the data from routeviews.org.
+# New BGP data is written to a .csv file every time the script is run.
+# Recommended frequency is every two hours. See README for more information on setup.
 # by @tprime_
 
 # Set our time variables here
