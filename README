@@ -1,1 +1,32 @@
 A bash script to monitor changes in BGP data provided by routeviews.org
+@tprime_
+
+I) INFORMATION
+
+This script performs the following:
+	1) Downloads the latest BGP data from routeviews.org
+	2) Identifies the number of peers observed per Autonomous System, as specified by the user
+	3) Calculates the change in the amount of observed peers as a decimal percentage
+	4) Writes data to a csv file
+
+II) USAGE
+
+Run the routeviews-bash.sh script, specifying the Autonomous Systems to monitor as a comma-seperated argument.
+
+III) INSTALLATION
+
+Routeviews.org updates their BGP data every two hours. For this reason, I recommend using crontab to run the script in two hours intervals:
+
+0 2,4,6,8,10,12,14,16,18,20,22 * * * ~/routeviews-bash.sh 123,456,789
+
+IV) OUTPUT
+
+The script will save data to a CSV file with the following information:
+
+date,AS #,# of peers,change %
+
+The 'change' value is represented as a decimal percentage. For instance, .05 indicates a 5% increase in the number of observed peers. -.05 indicates a 5% decrease in the number of observed peers.
+
+V) Contact
+
+Questions? Comments? https://twitter.com/tprime_
